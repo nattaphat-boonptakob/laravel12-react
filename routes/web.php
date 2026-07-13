@@ -2,7 +2,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -58,4 +60,30 @@ Route::get('/infinite-scroll', function () {
 // สร้าง URL ว่า /lunch-voting เพื่อเรียกเปิดหน้าจอที่เราเขียนไว้ค่ะ
 Route::get('/lunch-voting', function () {
     return Inertia::render('LunchVoting'); 
+});
+
+
+// routes/web.php
+// use App\Models\Product;
+Route::get('/product', function () {
+    $products = Product::all();
+    return Inertia::render('ProductList', compact('products') );
+})->name('product');
+
+// routes/web.php
+Route::get('/product-others', function () {
+    return Inertia::render('ProductOthers');
+})->name('product-others');
+
+
+
+
+Route::get('/quiz4', function () {
+    // ดึงข้อมูลทั้งหมดจากตาราง books
+    $books = DB::table('books')->get();
+    
+    // ส่งข้อมูลไปแสดงผลที่ไฟล์ Quiz4.jsx
+    return Inertia::render('Quiz4', [
+        'books' => $books
+    ]);
 });
