@@ -87,3 +87,12 @@ Route::get('/quiz4', function () {
         'books' => $books
     ]);
 });
+
+
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+
+// เพิ่มโค้ดส่วนนี้ลงไปได้เลยค่า
+Route::get('/quiz3', function () {
+    return Inertia::render('Quiz3');
+});
