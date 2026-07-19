@@ -1,4 +1,4 @@
-import BootstrapLayout from "@/Layouts/BootstrapLayout";
+import BootstrapLayout from "@/layouts/BootstrapLayout";
 import { Head } from "@inertiajs/react";
 import { useState } from "react";
 
