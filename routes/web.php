@@ -58,7 +58,7 @@ Route::get('/infinite-scroll', function () {
 
 
 // สร้าง URL ว่า /lunch-voting เพื่อเรียกเปิดหน้าจอที่เราเขียนไว้ค่ะ
-Route::get('/lunch-voting', function () {
+Route::get('/Quiz3', function () {
     return Inertia::render('LunchVoting'); 
 });
 

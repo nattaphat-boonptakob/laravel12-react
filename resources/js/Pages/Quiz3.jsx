@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Head } from '@inertiajs/react';
 
-export default function LunchVoting() {
+export default function Quiz3() {
     // 1. กำหนด State ให้กับ 3 เมนู
     const [padThai, setPadThai] = useState(0);
     const [krapow, setKrapow] = useState(0);
